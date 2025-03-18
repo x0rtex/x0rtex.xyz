@@ -1,0 +1,99 @@
+﻿/* Colors */
+$dark-background-color: #000;
+$light-background-color: #111;
+$accent-color: #0ff;
+
+/* Borders */
+$thin-border: 1px solid $accent-color;
+$thick-border: 2px solid $accent-color;
+
+/* Base Styles */
+body {
+  margin: 0;
+  padding: 0;
+  background: $dark-background-color;
+  color: $accent-color;
+  font-family: "Courier New", Courier, monospace;
+}
+
+/* Container */
+main {
+  width: 90%;
+  margin: 2rem auto;
+  background: $light-background-color;
+  border: $thin-border;
+  padding: 1.5em;
+}
+
+/* Navigation */
+nav {
+  background: $light-background-color;
+  padding: 1.5rem;
+  border-bottom: $thick-border;
+  box-shadow: 0 0 10px $accent-color;
+
+  /* Unordered list reset and flex styling */
+  ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    /* List items spacing */
+    li {
+      margin: 0 0.5rem;
+
+      /* Navigation Links */
+      a {
+        color: $accent-color;
+        text-decoration: none;
+        padding: 0.5rem 1.5rem;
+        border: $thick-border;
+        background: $dark-background-color;
+        font-weight: bold;
+        font-size: 1.25rem;
+        text-shadow: 0 0 5px $accent-color;
+        transition: background 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s;
+
+        /* Hover Effects for Navigation Links */
+        &:hover {
+          background: $accent-color;
+          color: $dark-background-color;
+          box-shadow: 0 0 10px #f0f, 0 0 20px $accent-color;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+/* Neon Animation for H1 */
+@keyframes neonPulse {
+  0%, 100% {
+    text-shadow: 0 0 5px #f0f, 0 0 10px $accent-color;
+  }
+  50% {
+    text-shadow: 0 0 20px #f0f, 0 0 30px $accent-color;
+  }
+}
+
+h1 {
+  animation: neonPulse 1.5s infinite alternate;
+}
+
+/* Paragraphs */
+p {
+  margin: 10px 0;
+}
+
+/* Footer */
+footer {
+  background: $light-background-color;
+  text-align: center;
+  padding: 10px;
+  border-top: $thin-border;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
